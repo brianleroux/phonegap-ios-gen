@@ -1,0 +1,23 @@
+#! /bin/sh
+#
+# compile and launch a phonegap/ios project to the simulator
+# 
+# USAGE
+#   ./debug [path name]
+#
+# EXAMPLE
+#  ./debug ~/Desktop/radness Radness
+#
+set -e
+
+PROJECT_PATH=${1:-"./example"}
+PROJECT_NAME=${2:-"PhoneGapExample"}
+PRJ=$PROJECT_NAME.xcodeproj
+APP=build/Release-iphonesimulator/$PROJECT_NAME.app
+
+cd $PROJECT_PATH
+
+xcodebuild -project $PRJ -sdk iphonesimulator4.2
+
+ios-sim launch $APP --stderr ios.log --stdout ios.log &
+
