@@ -19,5 +19,5 @@ cd $PROJECT_PATH
 
 xcodebuild -project $PRJ -sdk iphonesimulator4.2
 
-ios-sim launch $APP --stderr ios.log --stdout ios.log &
+ios-sim launch $APP --stderr console.log --stdout console.log &
 
