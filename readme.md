@@ -7,7 +7,7 @@ reqs
 ---
 
 1. ios sdk
-2. ios-sim
+2. [ios-sim](https://github.com/Fingertips/ios-sim)
 3. phonegap/iphone
 
 usage
@@ -27,4 +27,4 @@ from there you could play w/ the other scripts:
     ./bin/emulate ...................... launch the ios simulator
     ./bin/log [path] ................... console.log to stdout
 
-feedback and bugs appreciated!
+read the src, send feedback, bugs --- appreciated!
