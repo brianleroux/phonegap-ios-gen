@@ -14,10 +14,11 @@ PROJECT_PATH=${1:-"./example"}
 PROJECT_NAME=${2:-"PhoneGapExample"}
 PRJ=$PROJECT_NAME.xcodeproj
 APP=build/Release-iphonesimulator/$PROJECT_NAME.app
+SDK=`xcodebuild -showsdks | grep Sim | tail -1 | awk '{print $6}'`
 
 cd $PROJECT_PATH
 
-xcodebuild -project $PRJ -sdk iphonesimulator4.2
+xcodebuild -project $PRJ -sdk $SDK
 
 ios-sim launch $APP --stderr console.log --stdout console.log &
 
